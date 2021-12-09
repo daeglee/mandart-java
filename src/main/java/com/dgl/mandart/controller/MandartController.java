@@ -9,12 +9,19 @@ public class MandartController {
 
     @GetMapping("test")
     public String mandartTable(Model model){
-        int[][] matrix = {
-                {0,1,2,3,4,5,6},
-                {7,8,9,10,11,12,13}
-        };
 
-        model.addAttribute("matrix", matrix);
+        int idx = 0;
+        String[][] matrixStr = new String[9][];
+
+        for (String[] strings : matrixStr) {
+            strings = new String[9];
+            for (String string : strings) {
+                string = new String(idx++ +"");
+                System.out.println("ham : " + string);
+            }
+        }
+
+        model.addAttribute("matrix", matrixStr);
         return "manTable";
     }
 }
